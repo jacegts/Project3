@@ -1,5 +1,13 @@
 {
     "require": {
-        "slim/slim": "~2.6"
-    }
+        "slim/slim": "~2.6",
+		"guzzlehttp/guzzle": "~5.0"
+    },
+	"autoload": {
+		"psr-4": {
+			"Common\\Authentication\\":	"src/Common/Authentication",
+			"Views\\":					"src/Views"
+		}
+	}
+	
 }
