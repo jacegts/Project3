@@ -12,7 +12,7 @@ class SQLiteAuth implements IAuthentication
         $this->password=$password;
         try
         {
-            $this->conn = new PDO('sqlite:../src/Common/Authentication/SQLitetest.sqlite');
+            $this->conn = new PDO('sqlite:../src/data/SQLitetest.sqlite');
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch(PDOException $e)
@@ -24,7 +24,7 @@ class SQLiteAuth implements IAuthentication
     public function authenticateA($authKey)
     {
         //gettting an error about missing authkey right now  not sure why
-        $data=$this->conn->query('SELECT authKey FROM AuthK WHERE AuthKey= '.$this->conn->quote($authKey));
+        $data=$this->conn->query('SELECT AuthKey FROM AuthK WHERE AuthKey= '.$this->conn->quote($authKey));
 //        echo var_dump($data);
         $result=$data->fetchAll();
         if (count($result)!=1)
