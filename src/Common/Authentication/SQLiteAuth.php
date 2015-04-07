@@ -10,9 +10,11 @@ class SQLiteAuth implements IAuthentication
     {        
         $this->username=$username;
         $this->password=$password;
+        //$path = 'sqlite::'+ realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'SQLitetest.sqlite');
         try
         {
-            $this->conn = new PDO('sqlite:../src/data/SQLitetest.sqlite');
+            $this->conn = new PDO('sqlite:../data/SQLitetest.sqlite');
+            //$this->conn = new PDO($path);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch(PDOException $e)
