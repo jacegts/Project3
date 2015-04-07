@@ -9,17 +9,17 @@
 				var name = $("#name").val();
 				var password = $("#password").val();
 				// Returns successful data submission message when the entered information is stored in database.
-				var dataString = 'username='+ name + '&password='+ password;
+				var dataString = 'username='+ name + '&password='+ password + '&authKey=testAuthKey';
 				if(name==''||password=='')
 				{
-                                    alert("Please Fill All Fields");
+                    alert("Please Fill All Fields");
 				}
 				else
 				{
 				// AJAX Code To Submit Form.
 					$.ajax({
 						type: "POST",
-						url: "/auth",
+						url: "/api",
 						data: dataString,
 						cache: false,
                         dataType:'JSON',
@@ -63,6 +63,7 @@
             <div id="loginForm">
             	<h1> Please Sign In </h1> <br />
                 <p>
+                    Valid Auth is: SQLite / Litepass <br /><br />
                 	<label>Username: </label>
 						<input id="name" type="text"/><br /><br />
                 	<label>Password: </label>
