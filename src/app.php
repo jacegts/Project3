@@ -66,12 +66,13 @@
             }
         });
 
-	$app->post('/register', function (){
-	echo 'post crap';
+//	$app->post('/register', function (){
+//	   //Test Code   
+//
+//	});
 
-	});
 	$app->get('/register', function(){
-	echo 'get crap';
+	   require_once realpath(__DIR__.DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR.'RegistrationForm.html');
 	});
 
 
