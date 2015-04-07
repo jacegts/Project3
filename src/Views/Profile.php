@@ -1,5 +1,4 @@
-<?php
-echo "<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
 		<title>Profile</title>
@@ -7,8 +6,9 @@ echo "<!DOCTYPE html>
 		<script type='text/javascript'>
                 </script>
     </head>
-    <body>";
-echo "Welcome"+$_SESSION['username']+"Password"+$_SESSION['password'];
-
-echo "</body>
-</html>";
+    <body>
+        
+    Welcome
+    
+    </body>
+</html>

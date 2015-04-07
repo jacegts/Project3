@@ -9,7 +9,7 @@
 				var name = $("#name").val();
 				var password = $("#password").val();
 				// Returns successful data submission message when the entered information is stored in database.
-				var dataString = 'username='+ name + '&password='+ password;
+				var dataString = 'username='+ name + '&password='+ password + '&authKey=testAuthKey';
 				if(name==''||password=='')
 				{
                                     alert("Please Fill All Fields");
@@ -19,20 +19,10 @@
 				// AJAX Code To Submit Form.
 					$.ajax({
 						type: "POST",
-						url: "/auth",
+						url: "/api",
 						data: dataString,
 						cache: false,
                                                 dataType:'JSON',
-//						statusCode:{
-//                                                    200:function(){alert('test');
-//                                                }
-//                                                success: function(jq,t,e)
-//                                                {
-//                                                    alert('success');
-//                                                    //window.location("www.google.com");
-////                                                    alert(t);
-////                                                    alert(e);
-//                                                }//,
                                                 statusCode: 
                                                 {
                                                     200: function()
@@ -46,7 +36,6 @@
                                                         location.href = "/register", name, password
                                                         //location.window.href = "/register";
                                                     }
-
                                                 }
 //                                                error: function(jq,t,e)
 //                                                {alert(jq.status);}
@@ -56,7 +45,8 @@
 //                                                    alert('asdasdas');
 //                                                    //alert.html(result);
 //						}
-					})//.fail(function(data){debugger;alert('fasdasdasd');}).done(function(data){alert('success');})
+					})
+                                        //.fail(function(data){debugger;alert('fasdasdasd');}).done(function(data){alert('success');})
                                          ;       
                                         
             
