@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<title>Login Form</title>
+		<title>Registration Form</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function(){
@@ -9,17 +9,17 @@
 				var name = $("#name").val();
 				var password = $("#password").val();
 				// Returns successful data submission message when the entered information is stored in database.
-				var dataString = 'username='+ name + '&password='+ password + '&authKey=testAuthKey';
+				var dataString = 'username='+ name + '&password='+ password;
 				if(name==''||password=='')
 				{
-                    alert("Please Fill All Fields");
+                                    alert("Please Fill All Fields");
 				}
 				else
 				{
 				// AJAX Code To Submit Form.
 					$.ajax({
 						type: "POST",
-						url: "/api",
+						url: "/",
 						data: dataString,
 						cache: false,
                         dataType:'JSON',
@@ -33,8 +33,7 @@
                             401: function() 
                             {
                                 alert('not authorized');
-                                location.href = "/register", name, password
-                                //location.window.href = "/register";
+                                
                             }
 
                         }
@@ -59,16 +58,15 @@
 		<link rel="stylesheet" type="text/css" href="http://localhost/Project3/public/css/Site_Style_Sheet.css">
     </head>
     <body>
-        <div id="mainDiv">
-            <div id="loginForm">
-            	<h1> Please Sign In </h1> <br />
+        <div id = "mainDiv">
+            <div id='form'>
+            	<h1> Please Register </h1><br />
                 <p>
-                    Valid Auth is: SQLite / Litepass <br /><br />
                 	<label>Username: </label>
 						<input id="name" type="text"/><br /><br />
                 	<label>Password: </label>
 						<input id="password" type="password"/><br /><br />
-                	<input id="submit" type="button" value="Submit" /><br />
+                	<input id="submit" type="button" value="Create User" /><br />
             	</p>
             </div>
         </div>
